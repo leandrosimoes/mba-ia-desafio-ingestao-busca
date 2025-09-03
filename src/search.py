@@ -1,7 +1,6 @@
 from langchain_core.prompts import (
     ChatPromptTemplate,
     MessagesPlaceholder,
-    PromptTemplate,
 )
 from langchain_core.messages import trim_messages
 from langchain_core.chat_history import InMemoryChatMessageHistory
@@ -67,8 +66,6 @@ def prepare_inputs(payload: dict) -> dict:
 
 
 def search_prompt():
-    prompt = PromptTemplate.from_template(PROMPT_TEMPLATE)
-
     chat_prompt = ChatPromptTemplate.from_messages(
         [
             ("system", PROMPT_TEMPLATE),
