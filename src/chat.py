@@ -2,6 +2,7 @@ import os
 from search import search_prompt
 from langchain_openai import OpenAIEmbeddings
 from langchain_postgres import PGVector
+from utils import print_colored, input_colored
 
 config = {"configurable": {"session_id": "chat-session"}}
 
@@ -26,7 +27,29 @@ def get_context(question: str) -> str:
 
 def main():
     while True:
-        question = input("Digite sua pergunta (ou 'sair' para encerrar): ")
+        print("\n\n")
+        print_colored("Bem-vindo ao chat do nutricional!", "blue")
+        print_colored(
+            "\nEste chat possui informações sobre a Tabela Brasileira de Composição de Alimentos (TACO). Assim, você pode fazer perguntas relacionadas a alimentos, nutrientes e suas composições.\n",
+            "green",
+        )
+        print_colored("Exemplos de perguntas que você pode fazer:", "green")
+        print_colored("- Quais são os 5 alimentos mais ricos em proteína?", "green")
+        print_colored(
+            "- Comi 200g de arroz integral, 150g de patinho grelhado. Quantas calorias isso representa?",
+            "green",
+        )
+        print_colored(
+            "- Liste 5 alimentos que são boas fontes de carboidratos?", "green"
+        )
+        print_colored(
+            "\n\nIniciando chat. Type 'sair', 'exit', ou 'quit' para encerrar.\n",
+            "green",
+        )
+
+        question = input_colored(
+            "Digite sua pergunta (ou 'sair' para encerrar): ", "blue"
+        )
 
         if not question.strip():
             print("Por favor, insira uma pergunta válida.")
