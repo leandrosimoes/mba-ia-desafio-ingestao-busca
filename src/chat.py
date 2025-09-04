@@ -52,7 +52,7 @@ def main():
         )
 
         if not question.strip():
-            print("Por favor, insira uma pergunta válida.")
+            print_colored("Por favor, insira uma pergunta válida.", "red")
             continue
 
         if question.lower() == "sair":
@@ -61,8 +61,9 @@ def main():
         chain = search_prompt()
 
         if not chain:
-            print(
-                "Não foi possível iniciar o chat. Verifique os erros de inicialização."
+            print_colored(
+                "Não foi possível iniciar o chat. Verifique os erros de inicialização.",
+                "red",
             )
             return
 
@@ -72,8 +73,8 @@ def main():
             {"pergunta": question, "contexto": context}, config=config
         )
 
-        print("Resposta:", response.content.strip())
-        print("\n" + "-" * 50 + "\n")
+        print_colored("Resposta:", response.content.strip(), "green")
+        print_colored("\n" + "-" * 50 + "\n", "yellow")
 
 
 if __name__ == "__main__":
