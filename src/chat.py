@@ -28,22 +28,15 @@ def get_context(question: str) -> str:
 def main():
     while True:
         print("\n\n")
-        print_colored("Bem-vindo ao chat do nutricional!", "blue")
+        print_colored("Busca Semântica com LangChain e Postgres.", "blue")
         print_colored(
-            "\nEste chat possui informações sobre a Tabela Brasileira de Composição de Alimentos (TACO). Assim, você pode fazer perguntas relacionadas a alimentos, nutrientes e suas composições.\n",
+            "\nPergunte algo sobre as empresas contidas no banco de dados.\n",
             "green",
         )
-        print_colored("Exemplos de perguntas que você pode fazer:", "green")
-        print_colored("- Quais são os 5 alimentos mais ricos em proteína?", "green")
+        print_colored("Exemplo de pergunta que você pode fazer:", "green")
+        print_colored("- Qual o faturamento da Empresa SuperTechIABrazil?", "green")
         print_colored(
-            "- Comi 200g de arroz integral, 150g de patinho grelhado. Quantas calorias isso representa?",
-            "green",
-        )
-        print_colored(
-            "- Liste 5 alimentos que são boas fontes de carboidratos?", "green"
-        )
-        print_colored(
-            "\n\nIniciando chat. Type 'sair', 'exit', ou 'quit' para encerrar.\n",
+            "\n\nIniciando chat. Digite 'sair' para encerrar.\n",
             "green",
         )
 
