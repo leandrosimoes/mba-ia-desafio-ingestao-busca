@@ -2,7 +2,7 @@ import os
 from search import search_prompt
 from langchain_openai import OpenAIEmbeddings
 from langchain_postgres import PGVector
-from utils import print_colored, input_colored
+from utils import print_colored, input_colored, break_line
 
 config = {"configurable": {"session_id": "chat-session"}}
 
@@ -27,7 +27,7 @@ def get_context(question: str) -> str:
 
 def main():
     while True:
-        print("\n\n")
+        break_line()
         print_colored("Busca Semântica com LangChain e Postgres.", "blue")
         print_colored(
             "\nPergunte algo sobre as empresas contidas no banco de dados.\n",
@@ -35,11 +35,7 @@ def main():
         )
         print_colored("Exemplo de pergunta que você pode fazer:", "green")
         print_colored("- Qual o faturamento da Empresa SuperTechIABrazil?", "green")
-        print_colored(
-            "\n\nIniciando chat. Digite 'sair' para encerrar.\n",
-            "green",
-        )
-
+        break_line()
         question = input_colored(
             "Digite sua pergunta (ou 'sair' para encerrar): ", "blue"
         )

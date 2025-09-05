@@ -6,6 +6,11 @@ YELLOW = "\033[93m"
 RESET = "\033[0m"  # This resets the color back to default
 
 
+def break_line(qty: int = 1) -> None:
+    for _ in range(qty):
+        print("\n")
+
+
 def print_colored(text: str, color: str = None) -> None:
     if not text:
         return
